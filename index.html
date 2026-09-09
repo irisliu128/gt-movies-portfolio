@@ -168,7 +168,7 @@ section{padding:8px 0}
   transition:border-radius .5s ease, transform .3s cubic-bezier(.34,1.56,.64,1)}
 .portrait:hover .frame{transform:translateY(-4px) scale(1.02);
   border-radius:53% 47% 55% 45% / 45% 55% 44% 56%}
-.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 26%;display:block}
 .portrait.empty .frame img{display:none}
 .portrait.empty .frame::after{content:attr(data-file);padding:26px;text-align:center;
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;
@@ -194,6 +194,9 @@ section{padding:8px 0}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
   background:rgba(107,74,47,.09);padding:1px 5px;border-radius:5px}
 
+.process-text{white-space:pre-wrap;font-family:inherit;font-size:16.5px;line-height:1.75;
+  margin:0;color:var(--chestnut);overflow-x:auto}
+
 footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size:14.5px}
 
 @media (max-width:640px){
@@ -209,7 +212,7 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
   <div class="nav-inner">
     <span class="brand"><img class="foot-ic" src="assets/twemoji/dango.svg" alt=""> Iris Liu</span>
     <a href="#about">About</a>
-    <a href="#app">GT Movies Store</a>
+    <a href="https://xinyun.pythonanywhere.com/" target="_blank" rel="noopener">GT Movies Store &#8599;</a>
     <a href="#process">Process</a>
     <a href="#demo">Demo</a>
   </div>
@@ -220,8 +223,7 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
   <h1>Iris Liu<br><em>GT Movies Store</em></h1>
   <p class="tagline">
     <!-- TODO: one or two lines. Who you are + what this page is. -->
-    [A one-sentence hook — e.g. "Computer Science student at Georgia Tech who builds web apps
-    and bakes far too many desserts. This page walks through the Django movie store I designed and built."]
+    Second-year CS major at Georgia Tech. This page walks through the Django movie store I designed and built.
   </p>
   <div class="links">
     <a class="primary" href="#demo">Watch the demo ↓</a>
@@ -268,11 +270,8 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
         <div class="about-text">
           <!-- TODO: 2-3 short paragraphs. Major, year, what you like building,
                relevant coursework or experience, and the dessert habit. -->
-      <p>[Paragraph 1 — who you are: your major, year, and what drew you to software.]</p>
-            <p>[Paragraph 2 — what you like to build, any past projects or internships,
-              and the languages/tools you are most comfortable in.]</p>
-            <p>[Paragraph 3 — the fun one. Why this site looks like a mochi shop and a
-              Mont Blanc had a very good idea together.]</p>
+      <p>I'm a second-year CS major at Georgia Tech who loves desserts and the food app Beli.</p>
+            <p>[Optional: a few more lines here if you want a longer intro.]</p>
             <ul class="chips">
               <li>Python</li><li>Django</li><li>JavaScript</li><li>HTML / CSS</li>
               <li>SQLite</li><li>Git</li><li>[add your own]</li>
@@ -307,18 +306,16 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
         <li>Django Auth</li><li>Bootstrap</li><li>Sessions</li>
       </ul>
 
-      <!-- TODO: if you deploy the Django app, add a second link here. -->
+      
       <div class="applinks">
         <a class="solid" href="https://github.com/irisliu128/movies-store">View the code on GitHub &rarr;</a>
+        <a href="https://xinyun.pythonanywhere.com/" target="_blank" rel="noopener">Open the live app &rarr;</a>
       </div>
     </div>
 
-    <p style="color:var(--chestnut-mid);margin:0 0 20px">
-      Each screen below maps to one of the required user stories.
-    </p>
 
-    <!-- TODO: drop PNGs into ./screenshots/ using these exact filenames and
-         the placeholders turn into real screenshots automatically. -->
+      <!-- User-story cards parked until the screenshots are ready.
+           Delete these two comment markers to bring them back.
     <div class="grid">
 
       <article class="mochi m-sakura">
@@ -421,6 +418,7 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
       </article>
 
     </div>
+      -->
   </section>
 
   <div class="piped"></div>
@@ -432,32 +430,7 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
       <h2>How I built it</h2>
     </div>
     <div class="card">
-      <ol class="steps">
-        <li>
-          <h3>Planned before coding</h3>
-          <p>[Read the user stories, sketched the models and URL routes, decided what each
-             template needed before writing any Python.]</p>
-        </li>
-        <li>
-          <h3>Worked in small vertical slices</h3>
-          <p>[One user story at a time — model, view, URL, template — so something worked
-             end to end at every stage instead of half-finished everywhere.]</p>
-        </li>
-        <li>
-          <h3>Tracked the work in Git</h3>
-          <p>[How you used version control. Your repo currently has a single commit, so describe what you actually did rather than a branch-per-feature workflow you did not use.]</p>
-        </li>
-        <li>
-          <h3>Tested by hand as I went</h3>
-          <p>[Clicked through each flow after every change, checked the Django admin and the
-             SQLite rows to confirm data actually saved.]</p>
-        </li>
-        <li>
-          <h3>Navigated the stuck moments</h3>
-          <p>[How you resolved doubts — Django docs first, then error-message search, TA office
-             hours, classmates, and rubber-ducking. Name one real bug and how you found it.]</p>
-        </li>
-      </ol>
+      <pre id="process-text" class="process-text">Loading&hellip;</pre>
     </div>
   </section>
 
@@ -498,6 +471,17 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
     licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   </p>
 </footer>
+
+<script>
+  // Process write-up lives in process.txt so it can be swapped without touching this file.
+  fetch('process.txt', {cache: 'no-cache'})
+    .then(function (r) { if (!r.ok) { throw new Error('missing'); } return r.text(); })
+    .then(function (t) { document.getElementById('process-text').textContent = t.trim(); })
+    .catch(function () {
+      document.getElementById('process-text').textContent =
+        'process.txt has not been uploaded yet. Add it to the repository root and this section fills itself in.';
+    });
+</script>
 
 </body>
 </html>
