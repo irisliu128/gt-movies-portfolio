@@ -197,6 +197,11 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
 .process-text{white-space:pre-wrap;font-family:inherit;font-size:16.5px;line-height:1.75;
   margin:0;color:var(--chestnut);overflow-x:auto}
 
+.skills{display:flex;flex-direction:column;gap:20px;margin-top:26px}
+.skill-label{font-family:"Inter",sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--chestnut-mid);margin:0 0 10px}
+.skills .chips{margin-top:0}
+
 footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size:14.5px}
 
 @media (max-width:640px){
@@ -272,10 +277,55 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
                relevant coursework or experience, and the dessert habit. -->
       <p>I'm a second-year CS major at Georgia Tech who loves desserts and the food app Beli.</p>
             <!-- Room for a longer intro: <p>...</p> -->
-            <ul class="chips">
-              <li>Python</li><li>Django</li><li>JavaScript</li><li>HTML / CSS</li>
-              <li>SQLite</li><li>Git</li>
-            </ul>
+          <div class="skills">
+            <div>
+              <h3 class="skill-label">Languages</h3>
+              <ul class="chips">
+              <li>Java</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>HTML / CSS</li>
+              <li>Swift</li>
+              <li>SQL</li>
+              <li>C</li>
+              <li>Assembly</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="skill-label">Tools &amp; frameworks</h3>
+              <ul class="chips">
+              <li>Git</li>
+              <li>VS Code</li>
+              <li>Xcode</li>
+              <li>Vite</li>
+              <li>React</li>
+              <li>Capacitor</li>
+              <li>Tailwind CSS</li>
+              <li>Firebase</li>
+              <li>Jest</li>
+              <li>ESLint</li>
+              <li>Flask</li>
+              <li>Jira</li>
+              <li>SQL Workbench</li>
+              <li>Windsurf</li>
+              <li>Google Colab</li>
+              <li>NetBeans</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="skill-label">Libraries</h3>
+              <ul class="chips">
+              <li>pandas</li>
+              <li>NumPy</li>
+              <li>NetworkX</li>
+              <li>React Query</li>
+              <li>React Hook Form</li>
+              <li>Zod</li>
+              <li>Radix UI / shadcn</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div>
