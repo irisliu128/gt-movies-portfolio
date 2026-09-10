@@ -194,8 +194,6 @@ section{padding:8px 0}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
   background:rgba(107,74,47,.09);padding:1px 5px;border-radius:5px}
 
-.process-text{white-space:pre-wrap;font-family:inherit;font-size:16.5px;line-height:1.75;
-  margin:0;color:var(--chestnut);overflow-x:auto}
 
 .skills{display:flex;flex-direction:column;gap:20px;margin-top:26px}
 .skill-label{font-family:"Inter",sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.12em;
@@ -343,13 +341,12 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
 
     <div class="card" style="margin-bottom:24px">
       <p>
-        <!-- TODO: 3–5 sentences describing the app as a whole. -->
-        GT Movies Store is a Django application split into four apps &mdash;
-        <code>home</code>, <code>movies</code>, <code>cart</code> and <code>accounts</code> &mdash; each owning its own
-        models, URLs and templates. Movies carry a name, price, description and cover image. Visitors register,
-        browse and search the catalog, leave reviews only they can edit or delete, build a cart held in the
-        session, and check out into a permanent order record. Every view hands its template a single
-        <code>template_data</code> dictionary, so the view-to-template contract is identical across all four apps.
+        The GT Movies Store is a Django application built with the guidance of
+        <em>Django&nbsp;5 for the Impatient</em>. It is split into four apps: home, movies, cart, and accounts.
+        Users are able to purchase movies and add different quantities to their cart. They are also able to
+        leave reviews, edit their reviews, and report others&rsquo; reviews. They can also view their overall
+        order history. Users can also use a search feature throughout the movie store to find what they want
+        faster.
       </p>
       <ul class="chips">
         <li>Django 5</li><li>Python</li><li>SQLite</li><li>Django ORM</li>
@@ -480,7 +477,16 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
       <h2>How I built it</h2>
     </div>
     <div class="card">
-      <pre id="process-text" class="process-text">Loading&hellip;</pre>
+      <p style="margin-top:0">
+        My main workflow process involved working off <em>Django&nbsp;5 for the Impatient</em>. Using this
+        textbook, I would read through the code line by line to understand what I was implementing and what
+        each part meant. When I ran into bugs, I would search up the error codes and carefully comb through
+        the textbook to find the correct answer.
+      </p>
+      <p style="margin-bottom:0">The file below has the full write-up of the work process.</p>
+      <div class="applinks">
+        <a class="solid" href="Process.txt" download>Download Process.txt &darr;</a>
+      </div>
     </div>
   </section>
 
@@ -530,17 +536,6 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
     licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   </p>
 </footer>
-
-<script>
-  // Process write-up lives in process.txt so it can be swapped without touching this file.
-  fetch('process.txt', {cache: 'no-cache'})
-    .then(function (r) { if (!r.ok) { throw new Error('missing'); } return r.text(); })
-    .then(function (t) { document.getElementById('process-text').textContent = t.trim(); })
-    .catch(function () {
-      document.getElementById('process-text').textContent =
-        'process.txt has not been uploaded yet. Add it to the repository root and this section fills itself in.';
-    });
-</script>
 
 </body>
 </html>
