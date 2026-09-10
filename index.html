@@ -200,6 +200,15 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;
   text-transform:uppercase;color:var(--chestnut-mid);margin:0 0 10px}
 .skills .chips{margin-top:0}
 
+.stories-head{font-size:22px;margin:0 0 6px}
+.stories-lede{color:var(--chestnut-mid);font-size:15px;margin:0 0 22px}
+.stories{list-style:none;counter-reset:story;padding:0;margin:0}
+.stories li{counter-increment:story;position:relative;padding-left:2.7em;margin-bottom:16px;font-size:15.5px}
+.stories li:last-child{margin-bottom:0}
+.stories li::before{content:counter(story) ")";position:absolute;left:0;top:0;
+  font-weight:600;color:var(--gold);font-variant-numeric:tabular-nums}
+.stories b{color:var(--chestnut-deep)}
+
 footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size:14.5px}
 
 @media (max-width:640px){
@@ -358,6 +367,34 @@ footer{text-align:center;padding:56px 0 72px;color:var(--chestnut-mid);font-size
         <a class="solid" href="https://github.com/irisliu128/movies-store">View the code on GitHub &rarr;</a>
         <a href="https://xinyun.pythonanywhere.com/" target="_blank" rel="noopener">Open the live app &rarr;</a>
       </div>
+    </div>
+
+    <div class="card">
+      <h3 class="stories-head">User stories</h3>
+      <p class="stories-lede">Every user story required by the assignment, and where it lives in the app.</p>
+      <ol class="stories">
+          <li><b>Store information.</b> The home app serves a landing page and a separate About page describing the store and its purpose. Both are reachable from the navigation bar on every page.</li>
+          <li><b>Register an account.</b> The accounts app provides a sign-up page built on a custom user creation form. Validation errors appear above the form so users can correct them and try again.</li>
+          <li><b>Log in.</b> Registered users log in through the accounts app, which checks the username and password and starts a session. An incorrect combination returns a clear message rather than a generic failure.</li>
+          <li><b>Browse the catalog.</b> The movies page lists every film in the store with its cover image, name and price. Each entry links through to that movie's own detail page.</li>
+          <li><b>Search by title.</b> A search box at the top of the movies page filters the catalog by title, matching any part of the name regardless of capitalisation. The same page handles both the full listing and the search results.</li>
+          <li><b>Shopping cart.</b> The cart app has its own page listing every movie currently added, with quantities and a running total. It is reachable from the navigation bar at any time.</li>
+          <li><b>Add one or more items.</b> Each movie's detail page has a quantity selector next to the Add to Cart button. The cart stores the movie and its quantity together, so multiple copies of the same film are counted correctly.</li>
+          <li><b>Create reviews.</b> Logged-in users can leave a review from the movie detail page. Empty comments are rejected, and each review is saved with its author and the date it was written.</li>
+          <li><b>Empty the cart.</b> The cart page has a Clear button that removes everything in one action. This lets users start over without taking out one movie at a time.</li>
+          <li><b>Edit my reviews.</b> Every review shows an Edit button, but only to the person who wrote it. The edit page loads the existing comment so it can be changed and saved.</li>
+          <li><b>Delete my reviews.</b> A Delete button sits alongside Edit, again only for the review's author. The ownership check happens in the database lookup itself, so a review belonging to someone else cannot be deleted.</li>
+          <li><b>See a movie's reviews.</b> Each movie's detail page lists all of its reviews below the movie information. Every review shows the reviewer's username, the date and the comment.</li>
+          <li><b>See movie details.</b> Selecting a movie opens a page with its image, name, price and full description. The add-to-cart controls and the review section live on the same page.</li>
+          <li><b>Order history.</b> The accounts app has an Orders page showing every order the logged-in user has placed. Each one lists the movies bought, their quantities and the order total.</li>
+          <li><b>Access from any browser.</b> The app is deployed on PythonAnywhere and runs entirely in the browser with no installation. Anyone with an internet connection can reach it at the live link above.</li>
+          <li><b>Responsive interface.</b> The interface is built on Bootstrap&nbsp;5 with a viewport meta tag and a navigation bar that collapses on narrow screens. Layouts reflow so the store stays usable on smaller devices.</li>
+          <li><b>Admin: manage users.</b> Django's admin site is enabled, where user accounts can be viewed, created, updated and deleted. Administrators sign in at <code>/admin</code> with a superuser account.</li>
+          <li><b>Admin: manage movies.</b> The Movie model is registered in the admin with alphabetical ordering and a search box by name. Movies can be added, edited and removed without changing any code.</li>
+          <li><b>Admin: manage reviews.</b> The Review model is registered in the admin as well. Administrators can create, edit or delete any review, which is what handles reviews that users have reported.</li>
+          <li><b>Admin: manage orders.</b> Both the Order and Item models are registered in the admin. Administrators can inspect past orders and adjust or remove them.</li>
+          <li><b>Report inappropriate reviews.</b> Each review has a Report button, shown only to users other than its author, so nobody can hide their own review from moderation. Reporting flags the review and it stops being shown on the movie page.</li>
+      </ol>
     </div>
 
 
