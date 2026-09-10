@@ -1,4 +1,0 @@
-[Placeholder — replace this file with your full process write-up.
-
-Keep the filename exactly Process.txt (capital P). GitHub Pages is
-case-sensitive, so process.txt would break the download link.]
